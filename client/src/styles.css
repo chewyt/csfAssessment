@@ -2,3 +2,43 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.input-group-btn-right{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+
+  mat-list-item:hover{
+    background-color: rgba(121, 183, 212, 0.1);
+    transition-delay: 2 00ms;
+    transform-style: flat;
+  }
+
+.centerbro{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: url(./assets/blurred-background.jpg)  center;
+    min-height: 100%;
+    max-height: 300%;
+    
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-size: cover;
+    /* background-attachment:fixed; */
+    background-color: rgba(59, 252, 252, 0.34);
+  }
+
+  a{
+      text-decoration: none;
+  }

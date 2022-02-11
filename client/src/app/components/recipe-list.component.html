@@ -1,1 +1,30 @@
-<p>recipe-list works!</p>
+<mat-card style="min-height: 35rem;">
+
+    <mat-list>
+        <div class="d-flex justify-content-between">
+            <div mat-subheader>Recipes</div>
+            <div>
+               
+                <a [routerLink]="['add/']">
+                    <mat-icon>add</mat-icon>
+                </a>
+                <span>&nbsp;&nbsp;&nbsp;</span>
+            </div>
+        </div>
+        
+        
+        <div *ngFor="let recipe of recipes">
+            <a [routerLink]="['/recipe/'+recipe.id]" >
+                <mat-list-item>
+                        <mat-icon mat-list-icon>fastfood</mat-icon>
+                        <div mat-line>{{recipe.title}}</div>
+                        <mat-divider></mat-divider>
+                </mat-list-item>
+            </a>
+        </div>
+
+          <br>
+    
+    </mat-list>
+
+</mat-card>
