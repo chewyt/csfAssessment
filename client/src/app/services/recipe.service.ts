@@ -20,4 +20,10 @@ export class RecipeService {
       this.http.get<Recipe[]>('http://localhost:8080/api/recipes')
     )
   } 
+
+  getRecipe(id:string){
+    return lastValueFrom(
+      this.http.get<Recipe>('http://localhost:8080/api/recipes/'+id)
+    )
+  }
 }

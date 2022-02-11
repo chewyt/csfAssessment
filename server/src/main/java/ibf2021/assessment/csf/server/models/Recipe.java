@@ -48,9 +48,15 @@ public class Recipe {
         return Json.createObjectBuilder()
                 .add("id", id)
                 .add("title", title)
-                // .add("image", image)
-                // .add("instruction", instruction)
-                // .add("ingredients", IngredientstoJsonArray())
+                .add("image", image)
+                .add("instruction", instruction)
+                .add("ingredients", IngredientstoJsonArray())
+                .build();
+    }
+	public JsonObject toJsonSummary() {
+        return Json.createObjectBuilder()
+                .add("id", id)
+                .add("title", title)
                 .build();
     }
 

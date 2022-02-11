@@ -2,10 +2,6 @@ package ibf2021.assessment.csf.server.controllers;
 
 /* Write your request hander in this file */
 
-import java.io.IOException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -42,7 +38,7 @@ public class RecipesRestController {
 		
         recipes = svc.getAllRecipes();
         List<JsonObject> jRecipes = recipes.stream()
-				.map(r -> r.toJson())
+				.map(r -> r.toJsonSummary())
 				.toList();
         
         return ResponseEntity.ok(Json.createArrayBuilder(jRecipes).build().toString());
