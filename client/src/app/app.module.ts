@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from "@angular/common/http";
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { RecipeService } from './services/recipe.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [{provide:MAT_DATE_LOCALE,useValue:'en-SG'},
+  providers: [RecipeService, {provide:MAT_DATE_LOCALE,useValue:'en-SG'},
   {
     provide:DateAdapter,
     useClass:MomentDateAdapter,
