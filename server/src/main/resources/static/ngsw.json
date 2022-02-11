@@ -1,0 +1,87 @@
+{
+  "configVersion": 1,
+  "timestamp": 1644563149685,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.e0f35bd171f1780b.js",
+        "/manifest.webmanifest",
+        "/polyfills.3e082ada18ed2c88.js",
+        "/runtime.c9e8063183fe9570.js",
+        "/styles.75d9dc902d90199f.js",
+        "/styles.f17c1144ca5538d0.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/blurred-background.jpg",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/blurred-background.e9e936c0fa0e6d98.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/blurred-background.jpg": "0f092e1564370d17311109a1feae02f0077fa798",
+    "/assets/icons/icon-128x128.png": "38b5092040988404fc4fb76f3de39bb53d393e89",
+    "/assets/icons/icon-144x144.png": "d50a9f2156d9a6a00bf25289769a9b4ad1e837eb",
+    "/assets/icons/icon-152x152.png": "364bb1ac88abf1dd8751fd1cd1c2ad6ac708769c",
+    "/assets/icons/icon-192x192.png": "92d947da55efd7b75c11ef3ec8a40bc6045440a8",
+    "/assets/icons/icon-384x384.png": "6b0795f0573ecc2c8d0d6eed4afd50fbf71baeff",
+    "/assets/icons/icon-512x512.png": "a284b3699b4ee3467f3c096cabd48b9f8cf72775",
+    "/assets/icons/icon-72x72.png": "69501afa659baa3a3a4e35bc4e62792bd0eeb577",
+    "/assets/icons/icon-96x96.png": "54097e73c98031dc7f0474020259e4d59995c671",
+    "/blurred-background.e9e936c0fa0e6d98.jpg": "0f092e1564370d17311109a1feae02f0077fa798",
+    "/favicon.ico": "3331403694ba5f1372a81039051e28fda98737e9",
+    "/index.html": "71123d6a839c976400caed088d5dcb0ce22168cc",
+    "/main.e0f35bd171f1780b.js": "72c69c6634e0cc78845b0253cab3bdb514fbee3a",
+    "/manifest.webmanifest": "960dca33260bdfe9ff20c6016233a8d6ef3a5a2a",
+    "/polyfills.3e082ada18ed2c88.js": "9822a695826bfa52da3405478fccda4f6c489f51",
+    "/runtime.c9e8063183fe9570.js": "4348fe1747c35217a701e7f7f0248d1df58629e5",
+    "/styles.75d9dc902d90199f.js": "7d1d14c513f2a3db86ff1f67cbe78f2db16856c8",
+    "/styles.f17c1144ca5538d0.css": "1256ec7ecf0094a50991a63af240fd07f97952a0"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

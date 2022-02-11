@@ -17,19 +17,19 @@ export class RecipeService {
 
 
     return lastValueFrom(
-      this.http.get<Recipe[]>('http://localhost:8080/api/recipes')
+      this.http.get<Recipe[]>('/api/recipes')
     )
   } 
 
   getRecipe(id:string): Promise<Recipe>{
     return lastValueFrom(
-      this.http.get<Recipe>('http://localhost:8080/api/recipe/'+id)
+      this.http.get<Recipe>('/api/recipe/'+id)
     )
   }
 
   postRecipe(recipe:Recipe): Promise<string>{
     
-    const url = ' http://localhost:8080/api/recipe'
+    const url = ' /api/recipe'
     
     const headers = new HttpHeaders()
     .set('content-type','application/json')
