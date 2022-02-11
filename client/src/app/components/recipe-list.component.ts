@@ -18,9 +18,10 @@ export class RecipeListComponent implements OnInit {
     this.recipeSvc.getAllRecipes()
     .then(result=>{
       this.recipes=result
-      console.info("ngOnInit")
+      // console.info("ngOnInit")
       console.info(this.recipes)
     })
+
   }
 
 }

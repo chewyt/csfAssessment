@@ -1,1 +1,74 @@
-<p>recipe-add works!</p>
+<mat-card style="min-height: 28rem;">
+
+    <mat-card-header>
+        <mat-card-title>Add new Recipe {{isValid()}}</mat-card-title>
+    </mat-card-header>  
+    <mat-card-content>
+        
+        <form [formGroup]="form">
+            <div>
+                <mat-form-field class="example-full-width mb-3 mt-2" appearance="fill">
+                    <mat-label>Title</mat-label>
+                    <input type="text" matInput formControlName="title" placeholder="Your title here">
+                    <mat-hint *ngIf="!form.get('title')!.valid">Hint: Please fill up properly</mat-hint>
+                    <mat-error *ngIf="form.get('title')!.hasError('minlength') && !form.get('title')!.hasError('required')">
+                        Title too short</mat-error>
+                    <mat-error *ngIf="form.get('title')!.hasError('required')">Title is <span>mandatory</span> field
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="  mt-2 d-flex justify-content-between align-items-center">
+                <mat-form-field style="width: 90%;" appearance="fill">
+                    <mat-label>Ingredient</mat-label>
+                    <input type="text" #lol matInput formControlName="ingredient" [value]="ingredientInput" placeholder="Ingredient here">
+                </mat-form-field>
+                <button type="button" class="btn btn-success d-flex justify-content-center align-items-center" style="width: auto; margin-left: 10px;" (click)="addLineItem(lol.value)">+</button>
+            </div>
+            <mat-card *ngIf="tempList.length!=0">
+                <mat-list>
+                    <div mat-subheader >
+                        Added Ingredients
+                    </div>
+                    <mat-list-item *ngFor="let ingredient of tempList; let index = index">
+                        <div mat-line>{{ingredient}}</div>
+                        <button type="button" class="btn btn-danger btn-sm" (click)="deleteLineItem(index)">&nbsp;X&nbsp;</button>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card>
+            
+            <mat-form-field class="example-full-width mt-3 mb-3" appearance="fill">
+                <mat-label>Instruction</mat-label>
+                <textarea matInput formControlName="instruction" placeholder="Your instructions here"
+                    style="height: 3rem;"></textarea>
+                <mat-hint *ngIf="!form.get('instruction')!.valid">Hint: Please fill up properly</mat-hint>
+                <mat-error
+                    *ngIf="form.get('instruction')!.hasError('minlength') && !form.get('instruction')!.hasError('required')">
+                    Instruction too short</mat-error>
+                <mat-error *ngIf="form.get('instruction')!.hasError('required')">Instruction is a <span>mandatory</span> field
+                </mat-error>
+            </mat-form-field>
+        
+            <div>
+                <mat-form-field class="example-full-width mt-2" appearance="fill">
+                    <mat-label>Image URL</mat-label>
+                    <input type="text" #imgLink matInput formControlName="image" placeholder="Image URL here">
+                    <mat-hint *ngIf="!form.get('image')!.valid">Hint: Please fill up properly</mat-hint>
+                    <mat-error *ngIf="form.get('image')!.hasError('required')">image is <span>mandatory</span> field
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </form>
+        <mat-card class=" mb-3" *ngIf="form.get('image')!.valid">
+            <mat-list>
+                <div style="margin-bottom: 5px;">Preview Picture</div>
+                <img [src]="imgLink.value" alt="Preview photo not found"  height="100px" style="border-radius: 10px;">
+            </mat-list>
+        </mat-card>
+
+        <div class="d-flex justify-content-between align-items-end mt-3">
+            <button type="submit" class="btn btn-secondary w-25" [routerLink]="['/']">Back</button>
+            <button type="button" class="btn btn-primary w-25" [disabled]="!isValid()" (click)="addRecipe()">Add</button>
+        </div>
+    </mat-card-content>
+
+</mat-card>

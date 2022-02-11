@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import { Recipe } from '../models';
@@ -21,9 +21,23 @@ export class RecipeService {
     )
   } 
 
-  getRecipe(id:string){
+  getRecipe(id:string): Promise<Recipe>{
     return lastValueFrom(
-      this.http.get<Recipe>('http://localhost:8080/api/recipes/'+id)
+      this.http.get<Recipe>('http://localhost:8080/api/recipe/'+id)
+    )
+  }
+
+  postRecipe(recipe:Recipe): Promise<string>{
+    
+    const url = ' http://localhost:8080/api/recipe'
+    
+    const headers = new HttpHeaders()
+    .set('content-type','application/json')
+    .set('Access-Control-Allow-Origin','*');
+
+
+    return lastValueFrom(
+      this.http.post<string>(url,recipe,{headers})
     )
   }
 }
